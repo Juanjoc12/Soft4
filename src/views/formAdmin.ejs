@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Login</title>
+    <% include partials/head %>
+  </head>
+  <body class="diseño">
+    <div class = "box">
+
+        <form action="/formAdmin" method="post">
+            <label for="Name">Niveles</label>
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Conocimiento">
+                <option value="Comprension">
+                <option value="Aplicacion/Analisis">
+                <option value="Sintesis">
+                <option value="Evaluacion">
+            </datalist>
+        </form>
+        <br />
+
+
+        <!-- <script type="text/javascript">
+            //1) Definimos Las Variables Correspondintes
+            var opt_1 = new Array ("-", "Antioquia", "Cundinamarca", "Pasto", "...");
+            var opt_2 = new Array ("-", "Cordoba", "Mendoza", "Tucumán", "...");
+            var opt_3 = new Array ("-", "Pando", "Beni", "La Paz", "...");
+            var opt_4 = new Array ("-", "Cauca", "Quito", "Guayaquil", "...");
+            // 2) se crea una funcion que permita ejecutar el cambio dinamico
+            
+            function cambia(){
+                var cosa;
+                //Se toma el vamor de la "cosa seleccionada"
+                cosa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
+                //se chequea si la "cosa" esta definida
+                if(cosa!=0){
+                    //selecionamos las cosas Correctas
+                    mis_opts=eval("opt_" + cosa);
+                    //se calcula el numero de cosas
+                    num_opts=mis_opts.length;
+                    //marco el numero de opt en el select
+                    document.formulario1.opt.length = num_opts;
+                    //para cada opt del array, la pongo en el select
+                    for(i=0; i<num_opts; i++){
+                        document.formulario1.opt.options[i].value=mis_opts[i];
+                        document.formulario1.opt.options[i].text=mis_opts[i];
+                    }
+                    }else{
+                        //si no habia ninguna opt seleccionada, elimino las cosas del select
+                        document.formulario1.opt.length = 1;
+                        //ponemos un guion en la unica opt que he dejado
+                        document.formulario1.opt.options[0].value="-";
+                        document.formulario1.opt.options[0].text="-";
+                    }
+                    //hacer un reset de las opts
+                    document.formulario1.opt.options[0].selected = true;
+                    
+                }
+            </script> -->
+
+            
+        <label for="Name">Categorias del Nivel</label>
+        <br/>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <th>Nivel</th>
+                <th>Categoria</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <br />
+        <label for="Name">Nombre Categoria</label>
+        <input type="text" name="firstname" value="">
+        <button type="button" class="btn btn-success">Agregar</button>
+        <button type="button" class="btn btn-success">Editar</button>
+        <button type="button" class="btn btn-danger">Eliminar</button>
+    </div>
+  </body>
+</html>

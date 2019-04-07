@@ -5,24 +5,6 @@ const userSchema = new mongoose.Schema({
   local: {
     email: String,
     password: String
-  },
-  facebook: {
-    id: String,
-    token: String,
-    email: String,
-    password: String
-  },
-  twitter: {
-    id: String,
-    token: String,
-    email: String,
-    password: String
-  },
-  google: {
-    id: String,
-    token: String,
-    email: String,
-    password: String
   }
 });
 
