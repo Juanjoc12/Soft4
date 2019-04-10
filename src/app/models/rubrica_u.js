@@ -1,7 +1,7 @@
 const mongoose = require( 'mongoose' );
 
 
-const rubricaAdminSchema = new mongoose.Schema( {
+const userAdminSchema = new mongoose.Schema( {
 
     id_nivel: String,
     categoria: String
@@ -9,4 +9,4 @@ const rubricaAdminSchema = new mongoose.Schema( {
 } );
 
 // create the model for user and expose it to our app
-module.exports = mongoose.model( 'c_rubrica_admin', rubricaAdminSchema );
+module.exports = mongoose.model( 'c_r_user', userAdminSchema );

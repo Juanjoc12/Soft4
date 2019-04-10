@@ -1,5 +1,7 @@
 module.exports = ( app, passport ) => {
-
+	const Plant = require( './models/rubrica_u' );
+	const Rubric = require( './models/rubrica_admin' );
+	
 	// index routes
 	app.get( '/', ( req, res ) => {
 		res.render( 'index' );
@@ -12,17 +14,44 @@ module.exports = ( app, passport ) => {
 		} );
 	} );
 
-	app.get( '/formAdmin', isLoggedInAdmin, ( req, res ) => {
-		console.log(user.local.email)
+	app.get( '/formAdmin', async ( req, res ) => {
+		const rubric = await Rubric.find();
+		console.log(rubric)
 		res.render( 'formAdmin.ejs', {
-			
+			rubric
 		} );
 	} );
 
-	app.get( '/formUsuario', ( req, res ) => {
+	app.post( '/formAdmin', async ( req, res, next ) => {
+		const rubric = new Rubric( req.body );
+		await rubric.save();
+		res.redirect( '/formAdmin' );
+	} );
+
+	app.get( '/delete/:id', async ( req, res, next ) => {
+		const { id } = req.params;
+		await Rubric.remove({_id : id});
+		res.redirect( '/formAdmin' );
+	} );
+
+	app.get( '/formUsuario', async ( req, res ) => {
+		const p = await Plant.find();
+		console.log(p)
 		res.render( 'formUsuario.ejs', {
-			
+			p
 		} );
+	} );
+
+	app.post( '/formUsuario', async ( req, res, next ) => {
+		const p = new Rubric( req.body );
+		await p.save();
+		res.redirect( '/formUsuario' );
+	} );
+
+	app.get( '/delete/:id', async ( req, res, next ) => {
+		const { id } = req.params;
+		await Plant.remove({_id : id});
+		res.redirect( '/formUsuario' );
 	} );
 
 	app.post( '/login', passport.authenticate( 'local-login', {
@@ -47,7 +76,6 @@ module.exports = ( app, passport ) => {
 
 	//profile view
 	app.get( '/profile', isLoggedIn, ( req, res ) => {
-		console.log(user.local.email)
 		res.render( 'profile', {
 			user: req.user
 		} );
@@ -58,22 +86,11 @@ module.exports = ( app, passport ) => {
 		req.logout();
 		res.redirect( '/' );
 	} );
-	};
+};
 
-
-
-function isLoggedInAdmin( req, res, next ) {
-	console.log(req.local.user)
-	if ( req.isAuthenticated() && req.user.local.Admin == true ) {
-		return next();
-	}
-
-	res.redirect( '/' );
-}
 
 function isLoggedIn( req, res, next ) {
-	console.log(req.local.user)
-	if ( req.isAuthenticated() && req.user.local.Admin == true) {
+	if ( req.isAuthenticated() ) {
 		return next();
 	}
 
