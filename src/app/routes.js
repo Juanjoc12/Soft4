@@ -42,12 +42,6 @@ module.exports = ( app, passport ) => {
 		} );
 	} );
 
-	app.post( '/formUsuario', async ( req, res, next ) => {
-		const p = new Rubric( req.body );
-		await p.save();
-		res.redirect( '/formUsuario' );
-	} );
-
 	app.get( '/delete/:id', async ( req, res, next ) => {
 		const { id } = req.params;
 		await Plant.remove({_id : id});

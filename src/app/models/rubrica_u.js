@@ -9,4 +9,4 @@ const userAdminSchema = new mongoose.Schema( {
 } );
 
 // create the model for user and expose it to our app
-module.exports = mongoose.model( 'c_r_user', userAdminSchema );
+module.exports = mongoose.model( 'c_ru_user', userAdminSchema );
