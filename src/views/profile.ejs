@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Rubrica</title>
     <% include partials/head %>
-  </head>
-  <body class="diseño">
-    <div class="container">
-      <header class="text-center">
-        <h1>Rubrica</h1>
-        <a href="/logout" class="btn btn-light btn-sm">
-          Salir
-        </a>
-      </header>
-      <hr>
-      <div class="container">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title"><span class="fa fa-user"></span> Local</h3>
-              <p>
-                <strong>id</strong> : <%= user._id %> <br>
-                <strong>Usuario</strong> : <%= user.local.email %> <br>
-                </p>
-              <a href="/logout" class="btn btn-light btn-sm">
-                Salir
-              </a>
+</head>
+
+<body class="diseño">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container" Style="color:white;">
+            <h3>Rubric Expertise</h3>
+            <div>
+                <a href="/logout" class="btn btn-light btn-sm">
+                    Salir
+                </a>
             </div>
-          </div>
         </div>
-      </div>
-    </div> 
+    </nav>
+    <div class="container">
+        <header class="text-center">
+            <h1>Rubrica</h1>
+        </header>
+        <hr>
+        <div class="container">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title"><span class="fa fa-user"></span> Local</h3>
+                        <p>
+                            <strong>Usuario</strong> : <%= user.local.email %> <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div className="container">
         <br>
         <br>
@@ -42,194 +47,195 @@
         <button type="submit" class="btn btn-success">Crear plantilla</button>
         <table width="100%" border="2" cellpadding="0" cellspacing="0" bordercolor="#000000">
 
-           <tr>
+            <tr>
 
-               <th>#</th>
+                <th>#</th>
 
-               <th>Nivel</th>
+                <th>Nivel</th>
 
-               <th>Categoría de actividad</th>
+                <th>Categoría de actividad</th>
 
-               <th>Habilidades relacionadas</th>
+                <th>Habilidades relacionadas</th>
 
-               <th>Porcentaje</th>
+                <th>Porcentaje</th>
 
-               <th>Nivel de aplicacion</th>
+                <th>Nivel de aplicacion</th>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <th rowspan="2" valign="middle" align="left">1</th>
+                <th rowspan="2" valign="middle" align="left">1</th>
 
-               <th rowspan="2">&nbsp;Conocimiento</th>
+                <th rowspan="2">&nbsp;Conocimiento</th>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Conocer</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Conocer</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
+                <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Priorizando la información</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Priorizando la información</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <th rowspan="2" valign="middle" align="left">2</th>
+                <th rowspan="2" valign="middle" align="left">2</th>
 
-               <th rowspan="2">&nbsp;Comprensión</th>
+                <th rowspan="2">&nbsp;Comprensión</th>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Entendiendo e inferiendo</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Entendiendo e inferiendo</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
+                <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Explorando alternativas</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Explorando alternativas</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <th rowspan="2" valign="middle" align="left">3/4</th>
+                <th rowspan="2" valign="middle" align="left">3/4</th>
 
-               <th rowspan="2">&nbsp;Aplicación/Analisis</th>
+                <th rowspan="2">&nbsp;Aplicación/Analisis</th>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Análisis de estructura</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Análisis de estructura</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
+                <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Acompañamiento</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Acompañamiento</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
 
-           <tr>
+            <tr>
 
-               <th rowspan="2" valign="middle" align="left">5</th>
+                <th rowspan="2" valign="middle" align="left">5</th>
 
-               <th rowspan="2">&nbsp;Síntesis</th>
+                <th rowspan="2">&nbsp;Síntesis</th>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Cumplimiento de deberes</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Cumplimiento de deberes</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
+                <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Estrategias de implementación</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Estrategias de implementación</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <th rowspan="2" valign="middle" align="left">6</th>
+                <th rowspan="2" valign="middle" align="left">6</th>
 
-               <th rowspan="2">&nbsp;Evaluación</th>
+                <th rowspan="2">&nbsp;Evaluación</th>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Reflexión</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Reflexión</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
+                <th rowspan="2">&nbsp;<input type="text" size="1"></input></th>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-           <tr>
+            <tr>
 
-               <td rowspan="1" valign="middle" align="left">
-                   <div className="checkbox">
-                       <label ><input type="checkbox" value=""/>Cumplimiento de juicio</label>
-                   </div>
-               </td>
+                <td rowspan="1" valign="middle" align="left">
+                    <div className="checkbox">
+                        <label><input type="checkbox" value="" />Cumplimiento de juicio</label>
+                    </div>
+                </td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-               <td rowspan="1">&nbsp;<textarea></textarea></td>
+                <td rowspan="1">&nbsp;<textarea></textarea></td>
 
-           </tr>
+            </tr>
 
-       </table> 
+        </table>
 
-  </body>
+</body>
+
 </html>
