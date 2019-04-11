@@ -16,7 +16,6 @@ module.exports = ( app, passport ) => {
 
 	app.get( '/formAdmin', async ( req, res ) => {
 		const rubric = await Rubric.find();
-		console.log(rubric)
 		res.render( 'formAdmin.ejs', {
 			rubric
 		} );
@@ -28,7 +27,7 @@ module.exports = ( app, passport ) => {
 		res.redirect( '/formAdmin' );
 	} );
 
-	app.get( '/delete/:id', async ( req, res, next ) => {
+	app.get( '/deleteCategoria/:id', async ( req, res, next ) => {
 		const { id } = req.params;
 		await Rubric.remove({_id : id});
 		res.redirect( '/formAdmin' );
@@ -36,20 +35,19 @@ module.exports = ( app, passport ) => {
 
 	app.get( '/formUsuario', async ( req, res ) => {
 		const p = await Plant.find();
-		console.log(p)
 		res.render( 'formUsuario.ejs', {
 			p
 		} );
 	} );
 
-	app.get( '/delete/:id', async ( req, res, next ) => {
+	app.get( '/deletePlantilla/:id', async ( req, res, next ) => {
 		const { id } = req.params;
 		await Plant.remove({_id : id});
 		res.redirect( '/formUsuario' );
 	} );
 
 	app.post( '/login', passport.authenticate( 'local-login', {
-		successRedirect: '/profile',
+		successRedirect: '/formUsuario',
 		failureRedirect: '/login',
 		failureFlash: true
 	} ) );

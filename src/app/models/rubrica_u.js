@@ -3,8 +3,19 @@ const mongoose = require( 'mongoose' );
 
 const userAdminSchema = new mongoose.Schema( {
 
-    id_nivel: String,
-    categoria: String
+        id_rubrica: String,
+        n_plantilla: String,
+        niveles :{
+            nivel:{
+                n_nivel: String,
+                porcentaje: String,
+                categorias: {
+                    c_actividad : String,
+                    habRelacionada: String,
+                    nvlAplicacion: String,
+                }
+            }
+        }
 
 } );
 

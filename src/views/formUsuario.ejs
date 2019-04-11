@@ -26,26 +26,45 @@
 
 
     <div class="col-md-7">
+      <form action="/formUsuario" method="GET">
+        <label for="Name">
+            <h3>Tus plantillas</h3>
+        </label>
+        <br>
+        <a href="http://localhost:3000/profile" class="btn btn-success">
+          Agregar
+        </a>
+
+      </form>
+      <br>
       <table class="table table-bordered table-hover">
         <thead>
-          <th>Tus plantillas</th>
+          <th>ID de plantilla</th>
+          <th>Nombre de la plantilla</th>
+          <th>Nivel de aplicacion</th>
+          <th>Operaciones</th>
         </thead>
         <tbody>
+          <% for(var i=0; i < p.length; i++) { %>
+          <tr>
+            <td><strong><%= p[i].id_rubrica %></strong></td>
+            <td><%= p[i].n_plantilla %></td>
+            <td><%= p[i].niveles.categorias %></td>
+            <td>
+              <a href="/deletePlantilla/<%= p[i]._id %>" class="btn btn-danger">
+                Eliminar
+              </a>
+              <a href="" class="btn btn-info">
+                Editar
+              </a>
+            </td>
+          </tr>
+          <% } %>
 
         </tbody>
       </table>
     </div>
-    <form action="/formUsuario" method="GET">
-      <a href="" class="btn btn-success">
-        Agregar
-      </a>
-      <a href="" class="btn btn-danger">
-        Eliminar
-      </a>
-      <a href="" class="btn btn-info">
-        Editar
-      </a>
-    </form>
+
   </div>
 </body>
 
