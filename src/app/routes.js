@@ -27,6 +27,13 @@ module.exports = ( app, passport ) => {
 		res.redirect( '/formAdmin' );
 	} );
 
+	app.post( '/profile', async ( req, res, next ) => {
+		const plant = new Plant( req.body );
+		await plant.save();
+		res.redirect( '/formUsuario' );
+	} );
+	
+
 	app.get( '/deleteCategoria/:id', async ( req, res, next ) => {
 		const { id } = req.params;
 		await Rubric.remove({_id : id});
@@ -67,8 +74,10 @@ module.exports = ( app, passport ) => {
 	} ) );
 
 	//profile view
-	app.get( '/profile', isLoggedIn, ( req, res ) => {
+	app.get( '/profile', isLoggedIn, async ( req, res ) => {
+		const rubric = await Rubric.find();
 		res.render( 'profile', {
+			rubric,
 			user: req.user
 		} );
 	} );

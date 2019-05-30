@@ -4,7 +4,8 @@ const mongoose = require( 'mongoose' );
 const rubricaAdminSchema = new mongoose.Schema( {
 
     id_nivel: String,
-    categoria: String
+    porcentaje: String,
+    categorias: String,
 
 } );
 

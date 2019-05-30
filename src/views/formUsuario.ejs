@@ -39,17 +39,17 @@
       <br>
       <table class="table table-bordered table-hover">
         <thead>
-          <th>ID de plantilla</th>
-          <th>Nombre de la plantilla</th>
+          <th># de plantilla</th>
+          <th>Grupo asignado</th>
           <th>Nivel de aplicacion</th>
           <th>Operaciones</th>
         </thead>
-        <tbody>
+         <tbody>
           <% for(var i=0; i < p.length; i++) { %>
           <tr>
-            <td><strong><%= p[i].id_rubrica %></strong></td>
-            <td><%= p[i].n_plantilla %></td>
-            <td><%= p[i].niveles.categorias %></td>
+            <td><strong><%=i+1 %></strong></td>
+            <td><%= p[i].grupo %></td>
+            <td><%= p[i].nivelAplicacion %></td>
             <td>
               <a href="/deletePlantilla/<%= p[i]._id %>" class="btn btn-danger">
                 Eliminar
@@ -61,7 +61,7 @@
           </tr>
           <% } %>
 
-        </tbody>
+        </tbody> 
       </table>
     </div>
 
